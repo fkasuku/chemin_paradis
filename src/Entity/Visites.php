@@ -16,8 +16,6 @@ class Visites
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $visiteur = null;
 
     #[ORM\Column]
     private ?int $nfvisite = null;
@@ -34,22 +32,14 @@ class Visites
     #[ORM\Column]
     private ?int $np_evangelise = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $evangeliste = null;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getVisiteur(): ?string
-    {
-        return $this->visiteur;
-    }
-
-    public function setVisiteur(string $visiteur): self
-    {
-        $this->visiteur = $visiteur;
-
-        return $this;
-    }
 
     public function getNfvisite(): ?int
     {
@@ -107,6 +97,18 @@ class Visites
     public function setNpEvangelise(int $np_evangelise): self
     {
         $this->np_evangelise = $np_evangelise;
+
+        return $this;
+    }
+
+    public function getEvangeliste(): ?string
+    {
+        return $this->evangeliste;
+    }
+
+    public function setEvangeliste(string $evangeliste): self
+    {
+        $this->evangeliste = $evangeliste;
 
         return $this;
     }
