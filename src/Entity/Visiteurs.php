@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Traits\createdAtTrait;
 use App\Repository\VisiteursRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -9,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: VisiteursRepository::class)]
 class Visiteurs
 {
+    use createdAtTrait;
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
